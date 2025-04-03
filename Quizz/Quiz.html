@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="quizz.css">
+</head>
+
+<body>
+    <div id="border">
+        <h1>Guess the Word!</h1>
+        <h2 class="Question"></h2>
+     
+        <div class="guess" id="counting">You have <span>5</span> guesses Remaining</div>
+        <input type="text" id="inp">
+        <div class="options"></div>
+
+        <button id="check" onclick="check()">Guess</button>
+        <div class="result"></div>
+        <button class="reset" onclick="reset()"> Reset Game</button>
+    </div>
+    <script src="quizz.js"></script>
+</body>
+
+</html>

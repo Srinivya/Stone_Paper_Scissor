@@ -1,0 +1,50 @@
+* {
+
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    justify-content: center;
+
+}
+body{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+#border {
+   
+    margin: 20px;
+    padding: 20px;
+    border: 3px solid black;
+    height: 400px;
+    width: 400px;
+    background-color: antiquewhite;
+}
+
+
+button{
+    width: 100px;
+    padding: 10px;
+    border-radius: 7px;
+    margin: 10px;
+}
+#check{
+    background-color: blueviolet;
+    padding: 7px;
+    border-radius: 10px;
+    margin: 5px;
+}
+.reset{
+    padding: 7px;
+    border-radius: 10px;
+    margin: 5px;
+    background-color: coral;
+}
+.Question{
+    margin: 10px;
+    padding: 10px;
+}
+#inp{
+    margin: 20px;
+    padding: 10px;
+}

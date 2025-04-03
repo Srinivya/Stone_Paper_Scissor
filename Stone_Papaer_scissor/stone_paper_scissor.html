@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stone.css">
+
+</head>
+
+<body>
+    <div id="head">Stone Paper Scissor</div>
+    <div class="choices" >
+        <button id="stone" onclick="game('Stone')">🪨</button>
+        <button id="paper" onclick="game('paper')">📃</button>
+        <button id="scissor" onclick="game('scissor')">✂️</button>
+    </div>
+    <div>PLAYER : <span class="User"></span></div>
+    <div>COMPUTER : <span class="computer"></span></div>
+    <br>
+    <div>PLAYER CHOOSE: <span class="user_choose"></span></div>
+    <div>COMPUTER CHOOSE : <span class="com_Choose"></span></div>
+    <br>
+    <div>PLAYER SCORE : <span class="Userscore">0</span></div>
+    <div>COMPUTER SCORE: <span class="computerscore">0</span></div>
+    <button onclick="reset()" id="reset">Reset</button>
+
+    <script src="stone.js"></script>
+</body>
+
+</html>

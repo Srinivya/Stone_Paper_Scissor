@@ -1,0 +1,42 @@
+
+.boxes {
+    background-color: antiquewhite;
+    height: 50vh;
+    width: 40vw;
+    padding: 10px;
+    margin: 10px;
+    display: grid;
+    grid-template: 1fr 1fr 1fr/1fr 1fr 1fr;
+}
+
+.boxes div {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 2rem;
+    background-color: yellow;
+    height: 80px;
+    border-radius: 30px;
+    width: 100px;
+    padding: 10px;
+    margin: 10px;
+
+
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+#Reset {
+    font-size: 1.3rem;
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    background-color: antiquewhite;
+}
+
+#Reset:hover {
+    background-color: rgba(189, 141, 79, 0.47);
+}
