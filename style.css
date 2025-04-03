@@ -1,0 +1,151 @@
+body {
+    /* background-image: url(catt.jpeg); */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.outer {
+
+    background-color: rgba(165, 42, 42, 0.437);
+    padding: 2px;
+    margin: 2px;
+    display: grid;
+    height: 100px;
+
+    /* grid-template-columns: 30px 30px 30px;
+    grid-template-rows: 20px 20px 20px; */
+
+    grid-template: 1fr 1fr/1fr 1fr 1fr;
+    text-align: center;
+
+}
+
+#spa {
+    grid-row: 1 / span 2;
+
+}
+
+input[type=text] {
+
+    background: linear-gradient(to right, red, yellow);
+    border-radius: 20px;
+    height: 30px;
+    width: 30vw;
+    color: rgb(81, 128, 75);
+    font-size: large;
+}
+
+.key {
+    height: 250px;
+    width: 250px;
+    border-radius: 50% 30%;
+    position: relative;
+    animation: animate1 3s infinite;
+    animation-delay: 1s;
+    animation-direction: alternate;
+}
+
+@keyframes animate1 {
+    0% {
+        left: 0px;
+        background-color: aqua;
+    }
+
+    25% {
+        left: 200px;
+        background-color: blue;
+    }
+
+    50% {
+        left: 400px;
+        top: 0px;
+        border-radius: 30% 30%;
+        background-color: blueviolet;
+    }
+
+    75% {
+        left: 400px;
+        top: 90px;
+        border-radius: 30% 50%;
+        background-color: rgb(55, 164, 82);
+    }
+
+    100% {
+        left: 0px;
+        top: 90px;
+        background-color: rgb(55, 164, 82);
+    }
+}
+
+.transition {
+    margin: 100px;
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    transition: width 2s, height 2s, transform 2s;
+}
+
+.transition:hover {
+    width: 300px;
+    height: 300px;
+
+    /* transclate change the position of the div from the original state to the pixel we gave */
+    /* transform: translate(50px,100px); */
+
+    /* rotate rotate the container to the deg we tell to rotate */
+    /* transform: rotate(180deg); */
+
+    /* transform: scale(1, 2); */
+    /* scale changes the height and the widht based on the scale(2,3)2 chnages the width from normal state to double state 3 changes the normal height to 3 times of the height */
+
+    /* scaleX only change thw width od the container to the times we specify */
+    /* transform: scaleX(2); */
+
+    /* transform y changes the container height only to the times we specify */
+    /* transform: scaley(2); */
+
+    /* //changes the degree of x and y axis */
+    /* transform: skew(15deg); */
+
+
+}
+
+/* mobile m */
+@media screen and (min-width:320px) and (max-width:720px) {
+    body {
+        background-color: gold;
+    }
+}
+
+/* tablet */
+@media screen and (max-width:768px) {
+    body {
+        background-color: rgb(240, 140, 17);
+    }
+}
+
+/* mobile */
+@media screen and (max-width:320px) {
+    body {
+        background-color: mediumaquamarine;
+    }
+}
+
+@media screen and (min-width:770px) and (max-width:1200px) {
+    body {
+        background-color: mediumorchid;
+    }
+}
+
+@media screen and (max-width:1440px) and (min-width:1200px) {
+    body {
+        background-color: rgb(15, 115, 165);
+    }
+}
+
+
+
+/* dom */
+

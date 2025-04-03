@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <style>
+        .box {
+            background: beige;
+            height: 90vh;
+            width: 90vw;
+            border: 5px solid black;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .snake,
+        .food {
+            height: 20px;
+            width: 20px;
+            position: absolute;
+        }
+
+        .snake {
+            background: green;
+        }
+
+        .food {
+            background: red;
+        }
+
+        .game-over {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 30px;
+            color: red;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box">
+        <div class="food" id="food"></div>
+        <div class="game-over" id="gameOver">Game Over</div>
+    </div>
+    <script>
+        let box = document.getElementById("box");
+        let food = document.getElementById("food");
+        let gameOverText = document.getElementById("gameOver");
+        let step = 20;
+        let snake = [{ x: 100, y: 100 }];
+        let dir = "RIGHT";
+        let running = true;
+
+        function placeFood() {
+            food.style.left = Math.floor(Math.random() * ((box.clientWidth - step) / step)) * step + "px";
+            food.style.top = Math.floor(Math.random() * ((box.clientHeight - step) / step)) * step + "px";
+        }
+
+        function moveSnake() {
+            if (!running) return;
+            let head = { ...snake[0] };
+            if (dir === "UP") head.y -= step;
+            if (dir === "DOWN") head.y += step;
+            if (dir === "LEFT") head.x -= step;
+            if (dir === "RIGHT") head.x += step;
+            if (head.x < 0 || head.y < 0 || head.x >= box.clientWidth || head.y >= box.clientHeight) return gameOver();
+            snake.unshift(head);
+            head.x === food.offsetLeft && head.y === food.offsetTop ? placeFood() : snake.pop();
+            updateSnake();
+        }
+
+        function updateSnake() {
+            document.querySelectorAll(".snake").forEach(e => e.remove());
+            snake.forEach((p, i) => {
+                let div = document.createElement("div");
+                div.className = "snake";
+                div.style.left = p.x + "px";
+                div.style.top = p.y + "px";
+                if (!i) div.style.background = "darkgreen";
+                box.appendChild(div);
+            });
+        }
+
+        function gameOver() { running = false; gameOverText.style.display = "block"; }
+
+        document.addEventListener("keydown", e => {
+            let newDir = { ArrowUp: "UP", ArrowDown: "DOWN", ArrowLeft: "LEFT", ArrowRight: "RIGHT" }[e.key];
+            if (newDir && !({ UP: "DOWN", DOWN: "UP", LEFT: "RIGHT", RIGHT: "LEFT" }[dir] === newDir)) dir = newDir;
+        });
+
+        placeFood();
+        setInterval(moveSnake, 200);
+    </script>
+</body>
+
+</html>
